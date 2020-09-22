@@ -5,9 +5,7 @@
  */
 package BinarySearchTree_BST;
 
-import java.util.Arrays;
-import java.util.Stack;
-
+import java.util.*;
 /**
  *
  * @author Besty
@@ -92,11 +90,122 @@ class Tree {
         int left=getHight(node.getLeft()); 
         int right=getHight(node.getRight());
         
-        if(left>right)
-            return 1+left;
-        else return 1+right;
+        if(left>right){
+            System.out.print(" "+node.getData());
+         return 1+left;
+        }
+            
+        else{
+                        System.out.print(" "+node.getData());
+
+            return 1+right;
+        }
     }
     
+    
+    static int maxSum = Integer.MIN_VALUE;
+	static Node maxLeaf=null;
+	static int currentSum =0;
+	public static void maxSum(Node root, int sum){
+		if(root!=null){
+			sum=sum+root.getData();
+			if(sum>maxSum && root.getLeft()==null && root.getRight()==null){
+				maxLeaf = root;
+				maxSum = sum;
+			}
+			System.out.println("Sum " + sum);
+			maxSum(root.getLeft(),sum);
+			maxSum(root.getRight(),sum);
+		}
+	}
+
+        static Queue<Integer> stack=new LinkedList();
+
+        
+        public static int getLengthAndQueue(Node node){
+            
+            if(node==null) return 0;                 
+ 
+            int left=getLengthAndQueue(node.getLeft()); 
+            int right=getLengthAndQueue(node.getRight());  
+        
+            if(left>right){
+                stack.add(node.getData());
+                return 1+left;
+            }
+            
+            else{
+                stack.add(node.getData());
+                for(int i=0;i<left;i++){
+                    stack.remove();
+                }
+                return 1+right;
+            }
+	}   
+        
+        
+         public static int getx(Node node){
+             int maxLength=getLengthAndQueue(node); // get max length from root to leaf also get node data in queue 
+             
+             int sum=0;
+             if(node!=null)
+                 sum=node.getData();
+         
+            
+            for(int i: stack){
+                sum+=i;
+            return sum;
+        }
+        return sum;
+       }        
+    //Find the maximum sum leaf to root path in a Binary Tree
+     /*   5
+         / \
+        3   6
+       / \     
+      2   4    
+    
+    2>3>5=10, 4>3>5=12  there maximum path 3 for two path . 2>3>5 and  4>3>5 but maxim is 12 .
+    */
+    //  maximum path sum root-to-leaf  in a binary tree
+    public static int LongestPathSumRootToLeaf(Node node){
+        if (node == null)
+            return 0;
+        		
+        int left = LongestPathSumRootToLeaf(node.getRight());
+        int right = LongestPathSumRootToLeaf(node.getRight());
+            
+        if(left > right)
+           return left+node.getData();
+        else 
+            return right+node.getData();
+    }
+    
+    
+    
+    public static boolean printPath (Node root, int sum)
+	{
+		// base case
+		if (sum == 0) {
+			return true;
+		}
+
+		// base case
+		if (root == null) {
+			return false;
+		}
+
+		// recur for left and right subtree with reduced sum
+		boolean left = printPath(root.getLeft(), sum - root.getData());
+		boolean right = printPath(root.getRight(), sum - root.getData());
+
+		// print current node if it lies on path having given sum
+		if (left || right) {
+			System.out.print(root.getData() + " ");
+		}
+
+		return left || right;
+	}
     
    //Find the maximum sum leaf to root path in a Binary Tree
      /*   5

@@ -73,6 +73,11 @@ public class Main{
        Queue queue=new LinkedList();
        queue.add(newNode);
        bFSAndDFS.BFSqueue(queue);
+       
+       int min=MinMaxBST.getMinValue(newNode);
+       System.out.print(" min value "+min);
+       int max=MinMaxBST.getMax(newNode);
+       System.out.print(" max value "+max);
 
 }
 
