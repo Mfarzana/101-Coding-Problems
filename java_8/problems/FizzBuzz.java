@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package java_8.problems;
+package _101_Coding_Problems.java_8.problems;
 import java.util.*;
 /**
  *
