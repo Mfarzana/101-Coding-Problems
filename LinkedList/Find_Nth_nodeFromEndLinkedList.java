@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Farzana
  */
-public class NthnodeFromEndLinkedList {
+public class Find_Nth_nodeFromEndLinkedList {
     
     class Node
     {
