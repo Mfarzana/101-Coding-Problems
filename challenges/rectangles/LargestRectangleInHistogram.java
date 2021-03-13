@@ -5,8 +5,6 @@
  */
 package _101_Coding_Problems.challenges.rectangles;
 
-import challenges.rectangle.*;
-
 /**
  *
  * @author Farzana
