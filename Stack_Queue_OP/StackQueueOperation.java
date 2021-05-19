@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package immutablequeue;
+package Stack_Queue_OP;
 
 /**
  *
  * @author Farzana
  */
-public class ImmutableQueue {
+public class StackQueueOperation {
 
     /**
      * @param args the command line arguments
      */
-k    public static void main(String[] args) {
+    public static void main(String[] args) {
         // TODO code application logic here
     }
     
