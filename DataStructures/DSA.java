@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dsa;
+package _101_Coding_Problems.DataStructures;
 
 import java.util.Arrays;
 

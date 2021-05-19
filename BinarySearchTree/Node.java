@@ -11,7 +11,7 @@ package BinarySearchTree_BST;
  */
 
 public class Node {
-    private int data;
+    int data;
     private Node left;
     private Node right;
 
